@@ -69,16 +69,21 @@ Employee Leave Portal
 
 <input type="text" id="searchName" placeholder="Enter Employee Name">
 
-<button onclick="searchLeave()">Search</button>
+<button onclick="filterLeave()">Search</button>
+
+<iframe id="leaveFrame"
+src="YOUR_SHEET_PUBLISH_LINK"
+width="100%"
+height="400"></iframe>
 
 <script>
-function searchLeave() {
-  var name = document.getElementById("searchName").value;
+function filterLeave() {
+  var name = document.getElementById("searchName").value.toLowerCase();
+  var frame = document.getElementById("leaveFrame");
 
-  var sheetURL = "YOUR_SHEET_LINK";
-
-  window.open(sheetURL, "_blank");
+  frame.contentWindow.find(name);
 }
 </script>
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQfSVau9TLfp3788MfwbR3ZiNmoWgOGeS7HdkDKBt_5BQZ37b0lz9HLOgspYeagtS-rWuGEZnRbPneJ/pubhtml?gid=1951069045&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
 
