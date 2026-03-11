@@ -65,14 +65,19 @@ Employee Leave Portal
 
 <div class="card">
 
-<h2>Leave Request Status</h2>
+<h2>Check Leave Status</h2>
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQfSVau9TLfp3788MfwbR3ZiNmoWgOGeS7HdkDKBt_5BQZ37b0lz9HLOgspYeagtS-rWuGEZnRbPneJ/pubhtml?widget=true&amp;headers=false"></iframe>
+<input type="text" id="searchName" placeholder="Enter Employee Name">
 
-</div>
+<button onclick="searchLeave()">Search</button>
 
-</div>
+<script>
+function searchLeave() {
+  var name = document.getElementById("searchName").value;
 
-</body>
+  var sheetURL = "YOUR_SHEET_LINK";
 
-</html>
+  window.open(sheetURL, "_blank");
+}
+</script>
+
