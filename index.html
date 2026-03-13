@@ -1,10 +1,91 @@
-<h2>Check Leave Status</h2>
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Leave Portal</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6f9;
+margin:0;
+}
+
+.header{
+background:#2c3e50;
+color:white;
+padding:15px;
+text-align:center;
+font-size:24px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+margin-bottom:30px;
+border-radius:8px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+iframe{
+width:100%;
+border:none;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:10px;
+border:1px solid #ddd;
+text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+Employee Leave Portal
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Apply for Leave</h2>
+
+<iframe
+src="https://docs.google.com/forms/d/e/1FAIpQLSfZ2MgEn7ACNxn5bNxTfACYqLHvjZP6f2G44XH8J0lrI1-fqw/viewform?usp=header"
+height="850">
+</iframe>
+
+</div>
+
+
+<div class="card">
+
+<h2>Check Leave Balance</h2>
 
 <input type="text" id="searchName" placeholder="Enter Employee Name">
 
 <button onclick="searchEmployee()">Search</button>
 
+<br><br>
+
 <table id="leaveTable">
+
 <tr>
 <th>Employee Name</th>
 <th>Total Leave</th>
@@ -42,8 +123,13 @@
 
 </table>
 
+</div>
+
+</div>
+
 <script>
-function searchEmployee() {
+
+function searchEmployee(){
 
 var input = document.getElementById("searchName").value.toLowerCase();
 var table = document.getElementById("leaveTable");
@@ -54,6 +140,7 @@ for (var i = 1; i < tr.length; i++) {
 var td = tr[i].getElementsByTagName("td")[0];
 
 if (td) {
+
 var txt = td.textContent || td.innerText;
 
 if (txt.toLowerCase().indexOf(input) > -1) {
@@ -61,9 +148,14 @@ tr[i].style.display = "";
 } else {
 tr[i].style.display = "none";
 }
-}
 
 }
 
 }
+
+}
+
 </script>
+
+</body>
+</html>
