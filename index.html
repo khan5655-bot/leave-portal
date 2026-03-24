@@ -129,33 +129,6 @@ height="850">
 
 <script>
 
-function searchEmployee(){
-
-var input = document.getElementById("searchName").value.toLowerCase();
-var table = document.getElementById("leaveTable");
-var tr = table.getElementsByTagName("tr");
-
-for (var i = 1; i < tr.length; i++) {
-
-var td = tr[i].getElementsByTagName("td")[0];
-
-if (td) {
-
-var txt = td.textContent || td.innerText;
-
-if (txt.toLowerCase().indexOf(input) > -1) {
-tr[i].style.display = "";
-} else {
-tr[i].style.display = "none";
-}
-
-}
-
-}
-
-}
-
-</script>
 
 </body>
 </html>
